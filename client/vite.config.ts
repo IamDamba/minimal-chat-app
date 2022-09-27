@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/socket.io": {
-        target: "https://iamdamba-minimal-chat-app.vercel.app",
+        target: "wss://iamdamba-minimal-chat-app.vercel.app",
         changeOrigin: false,
         ws: true,
       },

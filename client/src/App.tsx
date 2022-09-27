@@ -9,14 +9,11 @@ import Chat from "./pages/chat/Chat";
 import Login from "./pages/login/Login";
 
 const socket = io({
-    reconnectionDelayMax: 10000,
-    transports: ["websocket", "polling"],
-    forceNew: true,
-    path: import.meta.env.PROD
-    ? "wss://iamdamba-minimal-chat-app.vercel.app"
-    : "ws://localhost:3001"
-  }
-);
+  reconnectionDelayMax: 10000,
+  transports: ["websocket", "polling"],
+  forceNew: true,
+  path: import.meta.env.PROD ? "" : "ws://localhost:3001",
+});
 
 // ||||||||||||||||||||||||||||| App Component ||||||||||||||||||||||||||||||||||||
 
