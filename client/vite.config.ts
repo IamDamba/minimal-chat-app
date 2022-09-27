@@ -7,12 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/socket.io": {
-        target: "https://mammoth-wonderful-thistle.glitch.me/",
-        changeOrigin: true,
-        ws: true,
-      },
-      "/": {
-        target: "https://mammoth-wonderful-thistle.glitch.me/",
+        target: "wss://mammoth-wonderful-thistle.glitch.me/",
         changeOrigin: true,
         ws: true,
       },

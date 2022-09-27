@@ -8,13 +8,9 @@ import io from "socket.io-client";
 import Chat from "./pages/chat/Chat";
 import Login from "./pages/login/Login";
 
-const socket = io({
+const socket = io("wss://mammoth-wonderful-thistle.glitch.me/", {
   reconnectionDelayMax: 10000,
-  transports: ["websocket"],
-  forceNew: true,
-  path: import.meta.env.PROD
-    ? "wss://mammoth-wonderful-thistle.glitch.me/"
-    : "ws://localhost:3001",
+  transports: ["websocket", "polling"],
 });
 
 // ||||||||||||||||||||||||||||| App Component ||||||||||||||||||||||||||||||||||||
