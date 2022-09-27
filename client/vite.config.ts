@@ -7,9 +7,11 @@ export default defineConfig({
   server: {
     proxy: {
       "/socket.io": {
+        target: "https://mammoth-wonderful-thistle.glitch.me/",
         ws: true,
       },
       "/": {
+        target: "https://mammoth-wonderful-thistle.glitch.me/",
         ws: true,
       },
     },
