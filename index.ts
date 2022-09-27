@@ -18,6 +18,10 @@ app.use(express.json());
 
 process.env.NODE_ENV === "production" &&
   app.use(express.static(path.join(__dirname, "client/dist")));
+process.env.NODE_ENV === "production" &&
+  app.get("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "client/dist", "index.html"))
+  );
 
 io.on("connection", (socket) => {
   console.log(`User connected: ${socket.id}`);
