@@ -8,18 +8,14 @@ import http from "http";
 import path from "path";
 
 const app = express();
-const server = http.createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: "https://iamdamba-minimal-chat-app.vercel.app/",
-    methods: ["GET", "POST"],
-  },
-});
-const port = process.env.PORT || 3001;
 
 // Middlewares ||||||||||||||||||||||||||||||||||
 app.use(cors());
 app.use(express.json());
+
+const server = http.createServer(app);
+const io = new Server(server);
+const port = process.env.PORT || 3001;
 
 process.env.NODE_ENV === "production" &&
   app.use(express.static(path.join(__dirname, "client/dist")));

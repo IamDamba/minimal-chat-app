@@ -10,7 +10,7 @@ import Login from "./pages/login/Login";
 
 const socket = io({
   reconnectionDelayMax: 10000,
-  transports: ["websocket", "polling"],
+  transports: ["websocket"],
   forceNew: true,
   path: import.meta.env.PROD ? "" : "ws://localhost:3001",
 });
