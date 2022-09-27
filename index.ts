@@ -9,7 +9,12 @@ import path from "path";
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "https://iamdamba-minimal-chat-app.vercel.app/",
+    methods: ["GET", "POST"],
+  },
+});
 const port = process.env.PORT || 3001;
 
 // Middlewares ||||||||||||||||||||||||||||||||||
