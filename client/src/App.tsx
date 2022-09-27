@@ -13,7 +13,7 @@ const socket = io({
   transports: ["websocket"],
   forceNew: true,
   path: import.meta.env.PROD
-    ? "https://mammoth-wonderful-thistle.glitch.me/"
+    ? "wss://mammoth-wonderful-thistle.glitch.me/"
     : "ws://localhost:3001",
 });
 
